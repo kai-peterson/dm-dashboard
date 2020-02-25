@@ -29,4 +29,19 @@ public class AudioClipsController {
         return repository.findById(id);
     }
 
+    @PutMapping("/clips/{id}")
+    Optional<AudioClip> editClipInfo(@RequestBody AudioClip newAudioClip, @PathVariable Long id) {
+        return repository.findById(id)
+                .map(clip -> {
+                    clip.setLink(newAudioClip.getLink());
+                    clip.setDescription(newAudioClip.getDescription());
+                    return repository.save(clip);
+                });
+    }
+
+    @DeleteMapping("/clips/{id}")
+    void deleteClip(@PathVariable Long id) {
+        repository.deleteById(id);
+    }
+
 }
