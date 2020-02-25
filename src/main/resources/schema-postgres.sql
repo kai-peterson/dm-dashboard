@@ -1,0 +1,2 @@
+-- DROP TABLE IF EXISTS AudioClips;
+-- CREATE TABLE AudioClips(id serial PRIMARY KEY, link VARCHAR(255), description VARCHAR(500))
