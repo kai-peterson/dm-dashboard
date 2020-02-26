@@ -23,20 +23,4 @@ public class DiceRoll {
         this.result = result;
     }
 
-    public String getEquation() {
-        return equation;
-    }
-
-    public void setEquation(String equation) {
-        this.equation = equation;
-    }
-
-    public double getResult() {
-        return result;
-    }
-
-    public void setResult(double result) {
-        this.result = result;
-    }
-
 }
