@@ -1,4 +1,4 @@
-package com.example.dmdashboard;
+package com.example.dmdashboard.model;
 
 import lombok.Data;
 
@@ -9,9 +9,14 @@ import javax.persistence.*;
 @Table(name = "audioclips")
 public class AudioClip {
 
-    private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) Long id;
-    private String link;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "description")
     private String description;
+    @Column(name = "link")
+    private String link;
 
     public AudioClip() {}
 

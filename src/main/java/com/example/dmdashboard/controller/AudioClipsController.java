@@ -1,5 +1,7 @@
-package com.example.dmdashboard;
+package com.example.dmdashboard.controller;
 
+import com.example.dmdashboard.repository.AudioClipsRepository;
+import com.example.dmdashboard.model.AudioClip;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +18,7 @@ public class AudioClipsController {
 
     @GetMapping("/clips")
     List<AudioClip> all() {
-        return repository.findAll();
+        return (List<AudioClip>) repository.findAll();
     }
 
     @PostMapping("/clips")

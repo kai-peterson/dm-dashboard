@@ -1,4 +1,4 @@
-package com.example.dmdashboard;
+package com.example.dmdashboard.service;
 
 import java.util.ArrayList;
 

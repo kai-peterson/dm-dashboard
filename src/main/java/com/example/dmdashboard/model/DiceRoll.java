@@ -1,4 +1,4 @@
-package com.example.dmdashboard;
+package com.example.dmdashboard.model;
 
 import lombok.Data;
 
@@ -11,15 +11,15 @@ public class DiceRoll {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "equation")
-    private String equation;
+    @Column(name = "rolls")
+    private String rolls;
     @Column(name = "result")
     private double result;
 
-    public DiceRoll() {};
+    public DiceRoll() {}
 
-    public DiceRoll(String equation, double result) {
-        this.equation = equation;
+    public DiceRoll(String rolls, double result) {
+        this.rolls = rolls;
         this.result = result;
     }
 
