@@ -14,11 +14,11 @@ public class DiceRoll {
     @Column(name = "rolls")
     private String rolls;
     @Column(name = "result")
-    private double result;
+    private int result;
 
     public DiceRoll() {}
 
-    public DiceRoll(String rolls, double result) {
+    public DiceRoll(String rolls, int result) {
         this.rolls = rolls;
         this.result = result;
     }
