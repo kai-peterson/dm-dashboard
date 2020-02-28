@@ -31,7 +31,8 @@ public class DiceRollsController {
         // business logic to roll dice and add rolls
         int[] rolls = RollDice.rollDice(newRoll.getRolls());
         int result = AddDice.addRolls(rolls);
-        newRoll.setRolls(Arrays.toString(rolls));
+        String rollsString = Arrays.toString(rolls);
+        newRoll.setRolls(rollsString.substring(1, rollsString.length() - 1));
         newRoll.setResult(result);
         return repository.save(newRoll);
     }
