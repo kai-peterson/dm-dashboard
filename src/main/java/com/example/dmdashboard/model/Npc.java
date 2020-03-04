@@ -40,6 +40,8 @@ public class Npc {
     private String notes;
     @OneToOne(fetch = FetchType.EAGER)
     private Stats stats;
+    @OneToOne(fetch = FetchType.EAGER)
+    private Proficiencies proficiencies;
 
     public Npc() {};
 

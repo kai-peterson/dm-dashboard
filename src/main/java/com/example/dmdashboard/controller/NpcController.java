@@ -1,8 +1,10 @@
 package com.example.dmdashboard.controller;
 
 import com.example.dmdashboard.model.Npc;
+import com.example.dmdashboard.model.Proficiencies;
 import com.example.dmdashboard.model.Stats;
 import com.example.dmdashboard.repository.NpcRepository;
+import com.example.dmdashboard.repository.ProficienciesRepository;
 import com.example.dmdashboard.repository.StatsRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,10 +16,12 @@ public class NpcController {
 
     private final NpcRepository repository;
     private final StatsRepository statsRepository;
+    private final ProficienciesRepository proficienciesRepository;
 
-    NpcController(NpcRepository repository, StatsRepository statsRepository) {
+    NpcController(NpcRepository repository, StatsRepository statsRepository, ProficienciesRepository proficienciesRepository) {
         this.repository = repository;
         this.statsRepository = statsRepository;
+        this.proficienciesRepository = proficienciesRepository;
     }
 
     @GetMapping("/npc")
@@ -59,13 +63,23 @@ public class NpcController {
                     });
     }
 
-    @PutMapping("/npc/stats/{id}/{stats_id}")
-    Npc editNpcStatsId(@PathVariable long id, @PathVariable long stats_id) {
+    @PutMapping("/npc/stats/{id}")
+    Npc editNpcStats(@PathVariable long id) {
         Npc newNpc = repository.findById(id)
                 .orElseThrow();
-        Stats npcStats = statsRepository.findById(stats_id)
+        Stats npcStats = statsRepository.findByNpcId(id)
                 .orElseThrow();
         newNpc.setStats(npcStats);
+        return repository.save(newNpc);
+    }
+
+    @PutMapping("/npc/proficiencies/{id}")
+    Npc editNpcProficiencies(@PathVariable long id) {
+        Npc newNpc = repository.findById(id)
+                .orElseThrow();
+        Proficiencies npcProficiencies = proficienciesRepository.findByNpcId(id)
+                .orElseThrow();
+        newNpc.setProficiencies(npcProficiencies);
         return repository.save(newNpc);
     }
 

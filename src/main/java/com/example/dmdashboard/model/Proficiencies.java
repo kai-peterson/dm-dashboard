@@ -13,7 +13,7 @@ public class Proficiencies {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "npc_id")
-    private int npc_id;
+    private long npcId;
     @Column(name = "strength")
     private boolean strength;
     @Column(name = "dexterity")
@@ -65,9 +65,9 @@ public class Proficiencies {
 
     public Proficiencies() {}
 
-    public Proficiencies(Long id, int npc_id, boolean strength, boolean dexterity, boolean constitution, boolean intelligence, boolean wisdom, boolean charisma, boolean acrobatics, boolean animal_handling, boolean arcana, boolean athletics, boolean deception, boolean history, boolean insight, boolean intimidation, boolean investigation, boolean medicine, boolean nature, boolean perception, boolean performance, boolean persuasion, boolean religion, boolean sleight_of_hand, boolean stealth, boolean survival) {
+    public Proficiencies(Long id, int npcId, boolean strength, boolean dexterity, boolean constitution, boolean intelligence, boolean wisdom, boolean charisma, boolean acrobatics, boolean animal_handling, boolean arcana, boolean athletics, boolean deception, boolean history, boolean insight, boolean intimidation, boolean investigation, boolean medicine, boolean nature, boolean perception, boolean performance, boolean persuasion, boolean religion, boolean sleight_of_hand, boolean stealth, boolean survival) {
         this.id = id;
-        this.npc_id = npc_id;
+        this.npcId = npcId;
         this.strength = strength;
         this.dexterity = dexterity;
         this.constitution = constitution;

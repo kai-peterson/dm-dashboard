@@ -27,7 +27,8 @@ public class ProficienciesController {
 
     @GetMapping("/proficiencies/{id}")
     Proficiencies findNpcProficiencies(@PathVariable long id) {
-        return repository.findByNpc_id(id);
+        return repository.findByNpcId(id)
+                    .orElseThrow();
     }
 
 }
