@@ -1,7 +1,9 @@
 package com.example.dmdashboard.controller;
 
 import com.example.dmdashboard.model.Npc;
+import com.example.dmdashboard.model.Stats;
 import com.example.dmdashboard.repository.NpcRepository;
+import com.example.dmdashboard.repository.StatsRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +13,11 @@ import java.util.Optional;
 public class NpcController {
 
     private final NpcRepository repository;
+    private final StatsRepository statsRepository;
 
-    NpcController(NpcRepository repository) {
+    NpcController(NpcRepository repository, StatsRepository statsRepository) {
         this.repository = repository;
+        this.statsRepository = statsRepository;
     }
 
     @GetMapping("/npc")
@@ -28,7 +32,7 @@ public class NpcController {
 
     @PostMapping("/npc")
     Npc newNpc(@RequestBody Npc newNpc) {
-        return  repository.save(newNpc);
+        return repository.save(newNpc);
     }
 
     @GetMapping("/npc/{id}")
@@ -53,6 +57,16 @@ public class NpcController {
                         npc.setNotes(newNpc.getNotes());
                         return repository.save(npc);
                     });
+    }
+
+    @PutMapping("/npc/stats/{id}/{stats_id}")
+    Npc editNpcStatsId(@PathVariable long id, @PathVariable long stats_id) {
+        Npc newNpc = repository.findById(id)
+                .orElseThrow();
+        Stats npcStats = statsRepository.findById(stats_id)
+                .orElseThrow();
+        newNpc.setStats(npcStats);
+        return repository.save(newNpc);
     }
 
     @DeleteMapping("/npc/{id}")
