@@ -20,6 +20,10 @@ public class Npc {
     private int level;
     @Column(name = "class")
     private String character_class;
+    @Column(name = "alignment")
+    private String alignment;
+    @Column(name = "sex")
+    private char sex;
     @Column(name = "age")
     private int age;
     @Column(name = "height_feet")

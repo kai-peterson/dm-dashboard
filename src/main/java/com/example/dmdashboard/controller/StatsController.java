@@ -24,7 +24,7 @@ public class StatsController {
     }
 
     @PostMapping("/stats")
-    Stats newState(@RequestBody Stats newStats) {
+    Stats newStats(@RequestBody Stats newStats) {
         return repository.save(newStats);
     }
 

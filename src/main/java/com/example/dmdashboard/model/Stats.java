@@ -22,17 +22,17 @@ public class Stats {
     private int speed;
     @Column(name = "proficiency")
     private int proficiency_bonus;
-    @Column(name = "strength")
+    @Column(name = "Strength")
     private int strength;
-    @Column(name = "dexterity")
+    @Column(name = "Dexterity")
     private int dexterity;
-    @Column(name = "constitution")
+    @Column(name = "Constitution")
     private int constitution;
-    @Column(name = "intelligence")
+    @Column(name = "Intelligence")
     private int intelligence;
-    @Column(name = "wisdom")
+    @Column(name = "Wisdom")
     private int wisdom;
-    @Column(name = "charisma")
+    @Column(name = "Charisma")
     private int charisma;
 
     public Stats() {}

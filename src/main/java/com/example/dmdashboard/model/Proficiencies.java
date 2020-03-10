@@ -15,57 +15,57 @@ public class Proficiencies {
     @Column(name = "npc_id")
     private long npcId;
     @Column(name = "strength")
-    private boolean strength;
+    private String strength = "none";
     @Column(name = "dexterity")
-    private boolean dexterity;
+    private String dexterity = "none";
     @Column(name = "constitution")
-    private boolean constitution;
+    private String constitution = "none";
     @Column(name = "intelligence")
-    private boolean intelligence;
+    private String intelligence = "none";
     @Column(name = "wisdom")
-    private boolean wisdom;
+    private String wisdom = "none";
     @Column(name = "charisma")
-    private boolean charisma;
+    private String charisma = "none";
     @Column(name = "acrobatics")
-    private boolean acrobatics;
+    private String acrobatics = "none";
     @Column(name = "animal_handling")
-    private boolean animal_handling;
+    private String animal_handling = "none";
     @Column(name = "arcana")
-    private boolean arcana;
+    private String arcana = "none";
     @Column(name = "athletics")
-    private boolean athletics;
+    private String athletics = "none";
     @Column(name = "deception")
-    private boolean deception;
+    private String deception = "none";
     @Column(name = "history")
-    private boolean history;
+    private String history = "none";
     @Column(name = "insight")
-    private boolean insight;
+    private String insight = "none";
     @Column(name = "intimidation")
-    private boolean intimidation;
+    private String intimidation = "none";
     @Column(name = "investigation")
-    private boolean investigation;
+    private String investigation = "none";
     @Column(name = "medicine")
-    private boolean medicine;
+    private String medicine = "none";
     @Column(name = "nature")
-    private boolean nature;
+    private String nature = "none";
     @Column(name = "perception")
-    private boolean perception;
+    private String perception = "none";
     @Column(name = "performance")
-    private boolean performance;
+    private String performance = "none";
     @Column(name = "persuasion")
-    private boolean persuasion;
+    private String persuasion = "none";
     @Column(name = "religion")
-    private boolean religion;
+    private String religion = "none";
     @Column(name = "sleight_of_hand")
-    private boolean sleight_of_hand;
+    private String sleight_of_hand = "none";
     @Column(name = "stealth")
-    private boolean stealth;
+    private String stealth = "none";
     @Column(name = "survival")
-    private boolean survival;
+    private String survival = "none";
 
     public Proficiencies() {}
 
-    public Proficiencies(Long id, int npcId, boolean strength, boolean dexterity, boolean constitution, boolean intelligence, boolean wisdom, boolean charisma, boolean acrobatics, boolean animal_handling, boolean arcana, boolean athletics, boolean deception, boolean history, boolean insight, boolean intimidation, boolean investigation, boolean medicine, boolean nature, boolean perception, boolean performance, boolean persuasion, boolean religion, boolean sleight_of_hand, boolean stealth, boolean survival) {
+    public Proficiencies(Long id, int npcId, String strength, String dexterity, String constitution, String intelligence, String wisdom, String charisma, String acrobatics, String animal_handling, String arcana, String athletics, String deception, String history, String insight, String intimidation, String investigation, String medicine, String nature, String perception, String performance, String persuasion, String religion, String sleight_of_hand, String stealth, String survival) {
         this.id = id;
         this.npcId = npcId;
         this.strength = strength;
