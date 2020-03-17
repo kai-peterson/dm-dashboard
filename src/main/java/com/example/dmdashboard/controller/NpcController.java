@@ -1,8 +1,6 @@
 package com.example.dmdashboard.controller;
 
 import com.example.dmdashboard.model.Npc;
-import com.example.dmdashboard.model.Proficiencies;
-import com.example.dmdashboard.model.Stats;
 import com.example.dmdashboard.repository.NpcRepository;
 import com.example.dmdashboard.repository.ProficienciesRepository;
 import com.example.dmdashboard.repository.StatsRepository;
@@ -44,32 +42,33 @@ public class NpcController {
         return repository.findById(id);
     }
 
-    @PutMapping("/npc/{id}")
-    Optional<Npc> editNpc(@RequestBody Npc newNpc, @PathVariable long id) {
-        return repository.findById(id)
-                    .map(npc -> {
-                        npc.setSession_id(newNpc.getSession_id());
-                        npc.setCharacter_class(newNpc.getCharacter_class());
-                        npc.setAge(newNpc.getAge());
-                        npc.setHeight_feet(newNpc.getHeight_feet());
-                        npc.setHeight_inches(newNpc.getHeight_inches());
-                        npc.setWeight(newNpc.getWeight());
-                        npc.setEye_color(newNpc.getEye_color());
-                        npc.setSkin_color(newNpc.getSkin_color());
-                        npc.setHair(newNpc.getHair());
-                        npc.setImportant(newNpc.isImportant());
-                        npc.setNotes(newNpc.getNotes());
-                        return repository.save(npc);
-                    });
-    }
+    // fix this later with correct new fields
+//    @PutMapping("/npc/{id}")
+//    Optional<Npc> editNpc(@RequestBody Npc newNpc, @PathVariable long id) {
+//        return repository.findById(id)
+//                    .map(npc -> {
+//                        npc.setSession_id(newNpc.getSession_id());
+//                        npc.setCharacter_class(newNpc.getCharacter_class());
+//                        npc.setAge(newNpc.getAge());
+//                        npc.setHeight_feet(newNpc.getHeight_feet());
+//                        npc.setHeight_inches(newNpc.getHeight_inches());
+//                        npc.setWeight(newNpc.getWeight());
+//                        npc.setEye_color(newNpc.getEye_color());
+//                        npc.setSkin_color(newNpc.getSkin_color());
+//                        npc.setHair(newNpc.getHair());
+//                        npc.setImportant(newNpc.isImportant());
+//                        npc.setNotes(newNpc.getNotes());
+//                        return repository.save(npc);
+//                    });
+//    }
 
     @PutMapping("/npc/stats/{id}")
     Npc editNpcStats(@PathVariable long id) {
         Npc newNpc = repository.findById(id)
                 .orElseThrow();
-        Stats npcStats = statsRepository.findByNpcId(id)
-                .orElseThrow();
-        newNpc.setStats(npcStats);
+//        Stats npcStats = statsRepository.findByNpcId(id)
+//                .orElseThrow();
+//        newNpc.setStats(npcStats);
         return repository.save(newNpc);
     }
 
@@ -77,9 +76,9 @@ public class NpcController {
     Npc editNpcProficiencies(@PathVariable long id) {
         Npc newNpc = repository.findById(id)
                 .orElseThrow();
-        Proficiencies npcProficiencies = proficienciesRepository.findByNpcId(id)
-                .orElseThrow();
-        newNpc.setProficiencies(npcProficiencies);
+//        Proficiencies npcProficiencies = proficienciesRepository.findByNpcId(id)
+//                .orElseThrow();
+//        newNpc.setProficiencies(npcProficiencies);
         return repository.save(newNpc);
     }
 

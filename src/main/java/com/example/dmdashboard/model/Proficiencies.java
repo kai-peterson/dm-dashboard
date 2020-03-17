@@ -12,8 +12,6 @@ public class Proficiencies {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "npc_id")
-    private long npcId;
     @Column(name = "strength")
     private String strength = "none";
     @Column(name = "dexterity")
@@ -65,9 +63,7 @@ public class Proficiencies {
 
     public Proficiencies() {}
 
-    public Proficiencies(Long id, int npcId, String strength, String dexterity, String constitution, String intelligence, String wisdom, String charisma, String acrobatics, String animal_handling, String arcana, String athletics, String deception, String history, String insight, String intimidation, String investigation, String medicine, String nature, String perception, String performance, String persuasion, String religion, String sleight_of_hand, String stealth, String survival) {
-        this.id = id;
-        this.npcId = npcId;
+    public Proficiencies(String strength, String dexterity, String constitution, String intelligence, String wisdom, String charisma, String acrobatics, String animal_handling, String arcana, String athletics, String deception, String history, String insight, String intimidation, String investigation, String medicine, String nature, String perception, String performance, String persuasion, String religion, String sleight_of_hand, String stealth, String survival) {
         this.strength = strength;
         this.dexterity = dexterity;
         this.constitution = constitution;

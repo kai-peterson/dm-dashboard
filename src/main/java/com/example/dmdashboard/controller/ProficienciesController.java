@@ -25,10 +25,10 @@ public class ProficienciesController {
         return repository.save(newProficiencies);
     }
 
-    @GetMapping("/proficiencies/{id}")
-    Proficiencies findNpcProficiencies(@PathVariable long id) {
-        return repository.findByNpcId(id)
-                    .orElseThrow();
-    }
+//    @GetMapping("/proficiencies/{id}")
+//    Proficiencies findNpcProficiencies(@PathVariable long id) {
+//        return repository.findByNpcId(id)
+//                    .orElseThrow();
+//    }
 
 }

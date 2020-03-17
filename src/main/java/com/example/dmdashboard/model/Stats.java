@@ -12,8 +12,6 @@ public class Stats {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "npc_id")
-    private long npcId;
     @Column(name = "health")
     private int health;
     @Column(name = "armor_class")
@@ -37,8 +35,7 @@ public class Stats {
 
     public Stats() {}
 
-    public Stats(long npcId, int health, int armor_class, int speed, int proficiency_bonus, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
-        this.npcId = npcId;
+    public Stats(int health, int armor_class, int speed, int proficiency_bonus, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
         this.health = health;
         this.armor_class = armor_class;
         this.speed = speed;
