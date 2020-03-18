@@ -1,12 +1,11 @@
 package com.example.dmdashboard.controller;
 
 import com.example.dmdashboard.data.SubclassData;
+import com.example.dmdashboard.data.SubclassDataPost;
 import com.example.dmdashboard.model.Subclass;
 import com.example.dmdashboard.repository.SubclassRepository;
 import com.example.dmdashboard.service.SubclassService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -32,9 +31,11 @@ public class SubclassController {
         return repository.findById(id);
     }
 
-//    @PostMapping("/subclasses")
-//    Subclass subclass(@RequestBody SubclassDataPost subclassDataPost) {
-//
-//    }
+    @PostMapping("/subclasses")
+    String newSubclass(@RequestBody SubclassDataPost subclassDataPost) {
+        subclassService.prepareSubclassForPost(subclassDataPost);
+        return "done";
+    }
+
 
 }

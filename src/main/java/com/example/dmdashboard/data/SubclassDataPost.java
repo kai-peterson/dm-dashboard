@@ -12,6 +12,7 @@ public class SubclassDataPost {
     private String subclassFlavor;
     private String description;
     private String url;
+    private String className;
     private List<PrerequisiteDataPost> prerequisiteDataPosts;
 
 }

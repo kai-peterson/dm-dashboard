@@ -19,7 +19,7 @@ public class Prerequisite {
     @Column(name = "url")
     private String url;
 
-    public Prerequisite(String name) {}
+    public Prerequisite() {}
 
     public Prerequisite(String name, String type, String url) {
         this.name = name;

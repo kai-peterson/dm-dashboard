@@ -25,6 +25,11 @@ public class Spells {
 
     public Spells() {}
 
+    public Spells(Spell spell, Subclass subclass) {
+        this.spell = spell;
+        this.subclass = subclass;
+    }
+
     public Spells(List<Prerequisite> prerequisites, Spell spell) {
         this.prerequisites = prerequisites;
         this.spell = spell;

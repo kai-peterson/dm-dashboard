@@ -12,7 +12,7 @@ public class Subclass {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long id = 14;
     @Column(name = "index")
     private String index;
     @Column(name = "name")
@@ -30,5 +30,15 @@ public class Subclass {
     @JoinColumn(name = "character_class_id")
     private CharacterClass characterClass;
 
+    public Subclass() {};
+
+    public Subclass(String index, String name, String subclassFlavor, String description, String url, CharacterClass characterClass) {
+        this.index = index;
+        this.name = name;
+        this.subclassFlavor = subclassFlavor;
+        this.description = description;
+        this.url = url;
+        this.characterClass = characterClass;
+    }
 
 }
